@@ -1,6 +1,6 @@
 # fast_relief
 
-Senior Design Project
+A new Flutter application.
 
 ## Getting Started
 
