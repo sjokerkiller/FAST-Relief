@@ -1,13 +1,17 @@
+import 'package:fast_relief/screens/home/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_fortune_wheel/flutter_fortune_wheel.dart';
 import 'dart:math';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:fast_relief/screens/home/home.dart';
 
 class FidgetCubeInterface extends StatefulWidget {
+  final Function toggleHome;
+  FidgetCubeInterface({ this.toggleHome });
+
   @override
   _FidgetCubeInterface createState() => new _FidgetCubeInterface();
 }
@@ -40,7 +44,24 @@ class _FidgetCubeInterface extends State<FidgetCubeInterface> {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
+          backgroundColor: Color(0xFFD58258),
           title: new Text('FAST Relief'), centerTitle: true,
+          actions: <Widget>[
+            TextButton.icon(
+              icon: Icon(
+                Icons.home,
+                color: Color(0xFF963A2F),
+              ),
+              label: Text('Home'),
+              style: TextButton.styleFrom(primary: Color(0xFF963A2F)),
+              onPressed: () {
+                Navigator.pop(
+                  context,
+                  MaterialPageRoute(builder: (context) => Home()),
+                );
+              },
+            ),
+          ],
         ),
         body:
         new Column(
@@ -221,37 +242,34 @@ class _FidgetCubeInterface extends State<FidgetCubeInterface> {
             ]
 
         ),
+        /*
         bottomNavigationBar: new BottomNavigationBar(
             items: [
-          /*
-            new BottomNavigationBarItem(
+              new BottomNavigationBarItem(
               icon: const Icon(Icons.arrow_back),
               title: new Text('Back'),
             ),
-
-            new BottomNavigationBarItem(
-              icon: const Icon(Icons.cached),
-              title: new Text('Refresh'),
-            ),
-             */
+         BottomNavigationBarItem(
+               icon: const Icon(Icons.home),
+                title: new Text('Home'),
         )
-
-        new BottomNavigationBarItem(
-    icon: const Icon(Icons.home),
-    title: new Text('Home'),
-    )
     ],
-    onTap: _onItemTapped,
-
+          onTap: _onItemTapped,
     ),
+
+      */
     );
   }
 
-  void _onItemTapped(int index){
-    setState(() {
-      _selectedIndex = index;
-    });
+  /*
+  void _onItemTapped(int index) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Home())
+    );
   }
+
+  */
   void switchChanged1(bool value) {
     print(value);
     setState(() {
