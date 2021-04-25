@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "383835206252",
+    "project_id": "fast-relief",
+    "storage_bucket": "fast-relief.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:383835206252:android:ce3c36ddce1f2e0bd7de49",
+        "android_client_info": {
+          "package_name": "com.example.fast_relief"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "383835206252-sv2jgbsp639b0df1tl72tfu95nn0tsau.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-e5gWuxwhX_m_0Ve9SL-gKzNN3BIjnBc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "383835206252-sv2jgbsp639b0df1tl72tfu95nn0tsau.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
