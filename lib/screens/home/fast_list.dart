@@ -13,7 +13,7 @@ class _FastListState extends State<FastList> {
   @override
   Widget build(BuildContext context) {
 
-    final fasts = Provider.of<List<Fast>>(context);
+    final fasts = Provider.of<List<Fast>>(context) ?? [];
 
     /*fast.forEach((fast) {
       print(fast.firstName);

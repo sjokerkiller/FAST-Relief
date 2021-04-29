@@ -4,85 +4,12 @@ import 'package:fast_relief/models/fast.dart';
 
 class FastCards extends StatelessWidget {
 
-
-
   final assetsAudioPlayer = AssetsAudioPlayer();
   final Fast fast;
 
   FastCards({ this.fast });
   final double height = 200;
-/*
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.0),
-      ),
-      child: Container(
-        height: 200,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/evening.jpg"),
-            fit: BoxFit.fitWidth,
-           // alignment: Alignment.topCenter,
-        ),
-        ),
-       // margin: EdgeInsets.fromLTRB(0, 0, 0, 50),
-        child: Center(
-        child: Text(
-          'Good ' + greeting() + ' ${fast.firstName}',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-            fontSize: 30,
-          ),
-          ),
-        ),
-      ),
-    );
-  }
 
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Card(
-                  child: Container(
-                  height: 200,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/images/evening.jpg"),
-                      fit: BoxFit.fitWidth,
-                    ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Good ' + greeting() + ' ${fast.firstName}',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 30,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-  */
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -102,9 +29,10 @@ class FastCards extends StatelessWidget {
             child: Text(
             'Good ' + greeting() + ' ${fast.firstName}',
               style: TextStyle(
+                fontFamily: 'Sweet Talk',
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 50,
               ),
             ),
           ),
@@ -120,14 +48,15 @@ class FastCards extends StatelessWidget {
           ),
           Container(
             alignment: Alignment.center,
-            padding: EdgeInsets.fromLTRB(0, height + 100, 0, 0),
+            padding: EdgeInsets.fromLTRB(0, height + 70, 0, 0),
             child: Text(
               '${fast.hobbies}' + '\n' +'Take a breath and do it ',
               textAlign: TextAlign.center,
               style: TextStyle(
+                fontFamily: 'Sweet Talk',
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
-                fontSize: 30,
+                fontSize: 50,
               ),
             ),
           ),
@@ -149,4 +78,5 @@ class FastCards extends StatelessWidget {
     }
     return 'Evening';
   }
-}
+  }
+

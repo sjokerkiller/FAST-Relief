@@ -57,6 +57,13 @@ flutter:
   - family: Cream Cake
     fonts:
       - asset: assets/fonts/Cream Cake.otf
+  - family: Sweet Talk
+    fonts:
+      - asset: assets/fonts/Sweet Talk.otf
+  - family: Letters for Learners
+    fonts:
+      - asset: assets/fonts/Letters for Learners.ttf
+
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

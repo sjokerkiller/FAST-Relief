@@ -6,7 +6,6 @@ import 'package:flutter_fortune_wheel/flutter_fortune_wheel.dart';
 import 'dart:math';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:fast_relief/screens/home/home.dart';
 
 class FidgetCubeInterface extends StatefulWidget {
   final Function toggleHome;
@@ -23,7 +22,7 @@ class _FidgetCubeInterface extends State<FidgetCubeInterface> {
   bool switch_value1 = false;
   bool switch_value2 = false;
   int selected = 0;
-  int _selectedIndex = 0;
+ //int _selectedIndex = 0;
 
   final items = <String>[
     'Fidget',
@@ -64,183 +63,204 @@ class _FidgetCubeInterface extends State<FidgetCubeInterface> {
           ],
         ),
         body:
-        new Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    /*
-                  new FlutterLogo(
-                      size: 74.0,
-                      colors: Colors.blue
-                  ),
-                  */
-                    new Text(
-                      "Fidget Cube Interface",
-                      style: new TextStyle(fontSize:33.0,
-                          color: const Color(0xFF000000),
-                          fontWeight: FontWeight.w200,
-                          fontFamily: "Roboto"),
-                    )
-                  ]
-
-              ),
-
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Text(
-                      "Buttons",
-                      style: new TextStyle(fontSize:21.0,
-                          color: const Color(0xFF000000),
-                          fontWeight: FontWeight.w200,
-                          fontFamily: "Roboto"),
+        Container(
+          color: Color(0xFFFFFEE9),
+          child: new Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                new Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      /*
+                    new FlutterLogo(
+                        size: 74.0,
+                        colors: Colors.blue
                     ),
-
-                    Transform.scale(scale: 2.0,
-                      child: new Radio(key:null, groupValue: group, value: 1.0, onChanged: radioChanged1),),
-
-                    Transform.scale(scale: 2.0,
-                      child: new Radio(key:null, groupValue: group, value: 2.0, onChanged: radioChanged2),),
-
-                    Transform.scale(scale: 2.0,
-                      child: new Radio(key:null, groupValue: group, value: 3.0, onChanged: radioChanged3),),
-
-                    Transform.scale(scale: 2.0,
-                      child: new Radio(key:null, groupValue: group, value: 4.0, onChanged: radioChanged4),),
-
-                    Transform.scale(scale: 2.0,
-                        child: new Radio(key:null, groupValue: group, value: 5.0, onChanged: radioChanged5)),
-
-
-                  ]
-
-              ),
-
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Text(
-                      "Switches",
-                      style: new TextStyle(fontSize:21.0,
-                          color: const Color(0xFF000000),
-                          fontWeight: FontWeight.w200,
-                          fontFamily: "Roboto"),
-                    ),
-
-                    new Switch(onChanged: switchChanged1, value:switch_value1),
-
-                    new Switch(onChanged: switchChanged2, value:switch_value2)
-                  ]
-
-              ),
-
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Text(
-                      "Sliders",
-                      style: new TextStyle(fontSize:21.0,
-                          color: const Color(0xFF000000),
-                          fontWeight: FontWeight.w200,
-                          fontFamily: "Roboto"),
-                    ),
-
-                    new CupertinoSlider(value: slider_value, onChanged: sliderChanged1, divisions: 5,)
-
-                  ]
-
-              ),
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Text(
-                      "Spinning Wheel",
-                      style: new TextStyle(fontSize:21.0,
-                          color: const Color(0xFF000000),
-                          fontWeight: FontWeight.w200,
-                          fontFamily: "Roboto"),
-                    ),
-
-
-                  ]
-
-              ),
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    // styling FortuneItems individually
-                    Container(
-                      height: 300.0,
-                      width: 300.0,
-                      child: new FortuneWheel(
-                        physics: CircularPanPhysics(
-                          duration: Duration(seconds: 1),
-                          curve: Curves.decelerate,
+                    */
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                        child: new Text(
+                          "Fidget Cube Interface",
+                          style: new TextStyle(fontSize:33.0,
+                              color: const Color(0xFF000000),
+                              fontWeight: FontWeight.w200,
+                              fontFamily: "Letters for Learners"),
                         ),
-                        onFling: () {
-                          setState(() {
-                            selected = Random().nextInt(items.length);
-                            HapticFeedback.vibrate();
-                            _audioCache.play('wheelspin.mp3');
-                          });
-                          print("new value" + selected.toString());
-                        },
+                      )
+                    ]
 
-                        selected: selected,
-                        items: [
-                          // for (var it in items)
-                          FortuneItem(
-                              child: Text('Fidget'),
-                              style: FortuneItemStyle(
-                                  color: const Color(0xFF963A2F),
-                                  borderColor: Colors.black,
-                                  borderWidth: 3
-                              )),
-                          FortuneItem(
-                              child: Text('Anxiety'),
-                              style: FortuneItemStyle(
-                                  color: const Color(0xFFD58258),
-                                  borderColor: Colors.black,
-                                  borderWidth: 3
-                              )),
-                          FortuneItem(
-                              child: Text('Stress'),
-                              style: FortuneItemStyle(
-                                  color: const Color(0xFFECB984),
-                                  borderColor: Colors.black,
-                                  borderWidth: 3
-                              )),
-                          FortuneItem(
-                              child: Text('Tension'),
-                              style: FortuneItemStyle(
-                                  color: const Color(0xFFA8A676),
-                                  borderColor: Colors.black,
-                                  borderWidth: 3
-                              )),
-                        ],
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                  child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        new Text(
+                          "Buttons",
+                          style: new TextStyle(fontSize:30.0,
+                              color: const Color(0xFF000000),
+                              fontWeight: FontWeight.w200,
+                              fontFamily:"Letters for Learners"),
+                        ),
+
+                        Transform.scale(scale: 2.0,
+                          child: new Radio(key:null, groupValue: group, value: 1.0, onChanged: radioChanged1),),
+
+                        Transform.scale(scale: 2.0,
+                          child: new Radio(key:null, groupValue: group, value: 2.0, onChanged: radioChanged2),),
+
+                        Transform.scale(scale: 2.0,
+                          child: new Radio(key:null, groupValue: group, value: 3.0, onChanged: radioChanged3),),
+
+                        Transform.scale(scale: 2.0,
+                          child: new Radio(key:null, groupValue: group, value: 4.0, onChanged: radioChanged4),),
+
+                        Transform.scale(scale: 2.0,
+                            child: new Radio(key:null, groupValue: group, value: 5.0, onChanged: radioChanged5)),
+
+
+                      ]
+
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        new Text(
+                          "Switches",
+                          style: new TextStyle(fontSize:30.0,
+                              color: const Color(0xFF000000),
+                              fontWeight: FontWeight.w200,
+                              fontFamily: "Letters for Learners"),
+                        ),
+
+                        new Switch(onChanged: switchChanged1, value:switch_value1),
+
+                        new Switch(onChanged: switchChanged2, value:switch_value2)
+                      ]
+
+                  ),
+                ),
+
+                new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                        child: new Text(
+                          "Sliders",
+                          style: new TextStyle(fontSize:30.0,
+                              color: const Color(0xFF000000),
+                              fontWeight: FontWeight.w200,
+                              fontFamily: "Letters for Learners"),
+                        ),
                       ),
-                    ),
-                  ]
 
-              ),
-            ]
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                        child: new CupertinoSlider(value: slider_value, onChanged: sliderChanged1, divisions: 5,),
+                      )
 
+                    ]
+
+                ),
+                new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
+                        child: new Text(
+                          "Spinning Wheel",
+                          style: new TextStyle(fontSize:30.0,
+                              color: const Color(0xFF000000),
+                              fontWeight: FontWeight.w200,
+                              fontFamily: "Letters for Learners"),
+                        ),
+                      ),
+
+
+                    ]
+
+                ),
+                new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      // styling FortuneItems individually
+                      Container(
+                        height: 300.0,
+                        width: 300.0,
+                        child: new FortuneWheel(
+                          physics: CircularPanPhysics(
+                            duration: Duration(seconds: 1),
+                            curve: Curves.decelerate,
+                          ),
+                          onFling: () {
+                            setState(() {
+                              selected = Random().nextInt(items.length);
+                              HapticFeedback.vibrate();
+                              _audioCache.play('wheelspin.mp3');
+                            });
+                            print("new value" + selected.toString());
+                          },
+
+                          selected: selected,
+                          items: [
+                            // for (var it in items)
+                            FortuneItem(
+                                child: Text('Fidget'),
+                                style: FortuneItemStyle(
+                                    color: const Color(0xFF963A2F),
+                                    borderColor: Colors.black,
+                                    borderWidth: 3
+                                )),
+                            FortuneItem(
+                                child: Text('Anxiety'),
+                                style: FortuneItemStyle(
+                                    color: const Color(0xFFD58258),
+                                    borderColor: Colors.black,
+                                    borderWidth: 3
+                                )),
+                            FortuneItem(
+                                child: Text('Stress'),
+                                style: FortuneItemStyle(
+                                    color: const Color(0xFFECB984),
+                                    borderColor: Colors.black,
+                                    borderWidth: 3
+                                )),
+                            FortuneItem(
+                                child: Text('Tension'),
+                                style: FortuneItemStyle(
+                                    color: const Color(0xFFA8A676),
+                                    borderColor: Colors.black,
+                                    borderWidth: 3
+                                )),
+                          ],
+                        ),
+                      ),
+                    ]
+
+                ),
+              ]
+
+          ),
         ),
         /*
         bottomNavigationBar: new BottomNavigationBar(

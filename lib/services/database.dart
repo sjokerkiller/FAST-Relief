@@ -9,8 +9,8 @@ class DatabaseService {
   final CollectionReference fastUserCollection = FirebaseFirestore.instance.collection(
       'FAST');
 
-  Future updateUserData(String firstName, String lastName, String hobbies,
-      String music) async {
+  Future updateUserData(String firstName, String lastName, String music,
+      String hobbies) async {
     return await fastUserCollection.doc(uid).set({
       'First Name': firstName,
       'Last Name' : lastName,
