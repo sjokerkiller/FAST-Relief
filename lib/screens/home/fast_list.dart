@@ -23,6 +23,7 @@ class _FastListState extends State<FastList> {
     });*/
     return ListView.builder(
       itemCount: fasts.length,
+      //itemCount: fasts.length,
       itemBuilder: (context, index) {
         return FastCards(fast: fasts[index]);
       },

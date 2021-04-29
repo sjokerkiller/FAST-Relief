@@ -36,6 +36,7 @@ dependencies:
   flutter_spinkit: "^4.1.2"
   flutter_fortune_wheel: ^0.4.2
   audioplayers: any
+  assets_audio_player: ^3.0.3+2
 
 dev_dependencies:
   flutter_test:

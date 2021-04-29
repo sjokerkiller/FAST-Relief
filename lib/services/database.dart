@@ -23,10 +23,10 @@ class DatabaseService {
   List<Fast> _fastUserListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.docs.map((doc){
       return Fast(
-        firstName: doc.data()['First Name'] ?? '',
-        lastName: doc.data()['Last Name'] ?? '',
-        hobbies: doc.data()['hobbies'] ?? '',
-        music: doc.data()['music'] ?? ''
+          firstName: doc.data()['First Name'] ?? '',
+          lastName: doc.data()['Last Name'] ?? '',
+          hobbies: doc.data()['hobbies'] ?? '',
+          music: doc.data()['music'] ?? ''
       );
     }).toList();
   }
@@ -34,6 +34,6 @@ class DatabaseService {
   // get fast user list stream
   Stream<List<Fast>> get fast {
     return fastUserCollection.snapshots()
-    .map(_fastUserListFromSnapshot);
+        .map(_fastUserListFromSnapshot);
   }
 }
